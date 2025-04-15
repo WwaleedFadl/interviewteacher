@@ -3,8 +3,11 @@ import { Button } from "@/components/ui/button";
 import { dummyInterviews } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import {getCurrentUser,getInterviewsByUserId} from '@/lib/actions/auth.action'
+import { getCurrentUser } from "@/lib/actions/auth.action";
+import {
+  getInterviewsByUserId,
+  getLatestInterviews,
+} from "@/lib/actions/general.action";
 
 
 const page = async() => {
@@ -42,9 +45,9 @@ const page = async() => {
             <InterviewCard {...interview} key={interview.id} />
             ))
             ) : (
-                  <p>You haven't taken any interviews yet.</p>
+                  <p>You haven&apos;t taken any interviews yet.</p>
             )
-          )}
+          }
         </div>
       </section>
       <section className="flex flex-col gap-6 mt-8">

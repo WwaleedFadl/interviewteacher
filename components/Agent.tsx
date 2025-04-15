@@ -1,10 +1,7 @@
-// @ts-nocheck
-//
 'use client'
 import {useState,useEffect} from 'react'
 import Image from "next/image";
 import {useRouter} from 'next/navigation'
-
 import { cn } from "@/lib/utils";
 import  {vapi} from '@/lib/vapi.sdk'
 
@@ -24,8 +21,8 @@ const Agent = ({ userName,userId,type }: AgentProps) => {
   const router = useRouter()
   const [isSpeaking,setIsSpeaking] = useState(false)
   const [callStatus,setCallStatus] = useState<CallStatus>(CallStatus.INACTIVE)
-  const [messages,setMessages]  useState<SavedMessage[]>([]);
-	const lastMessage = messages[messages.length - 1];
+  const [messages,setMessages]  = useState<SavedMessage[]>([]);
+//	const lastMessage = messages[messages.length - 1];
 
   useEffect(() => {
       const onCallStart = ()=>setCallStatus(CallStatus.ACTIVE)
