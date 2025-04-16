@@ -40,7 +40,7 @@ interface User {
 
 interface InterviewCardProps {
   interviewId?: string;
-  userId?: string;
+  id?: string;
   role: string;
   type: string;
   techstack: string[];
